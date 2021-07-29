@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epam Lab Task 2</title>
+</head>
+<body>
+    <script>
+        console.log(
+            true + false, // Потому что идёт числовое преобразование 1 + 0
+            "str" + 7, // Т. к. Один операнд - строка - то 7 преобразуется в строку
+            [] + null + 10, // массив с помощью метода toString преобрауется в '', '' + null = 'null', 'null' + 10 = 'null10'
+            7 + "str", // тоже что и "str" + 7
+            "str1" + + "str2", // унарный плюс более приоритетный, поэтому сначала вычсиляется +'str2', что равно NaN. Потом 'str1' + NaN = 'str1NaN'
+            5 / "2.5", // Потому что / преобразет операнды в числа
+            false == 'false', // == преобразует в числа: 'false' - преобразуется в NaN, a false - в 0. 0 == NaN - false
+            'true' == true, // то же что и в false == 'false'
+            null == '', // null равняется либо null или undefined
+            ['x'] == 'x', // ['x'].toString - возвращается 'x', 'x' == 'x' = true
+            [1, 1, 1] == [1, 1, 1], // сравнивается не равенсто содержимого. Грубо говоря сравниваются ссылки, и это разные объекты
+            [1] > null, // преобразуется в числа, то есть '1' > 0, 1 > 0, true
+            {} + [], // фигурные скобки вначале рассматриваются как блок кода а не литерал, поэтому остается +[] = 0
+            [] + {}, // '' + [Object object]
+        );
+    </script>
+</body>
+</html>
