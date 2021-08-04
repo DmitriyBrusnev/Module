@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>t3</title>
+</head>
+<body style="display: flex; justify-content: center; font-size: xx-large; font-family: Arial, Helvetica, sans-serif;">
+</body>
+<script>
+    const a = {
+        x: 2,
+        y: 3,
+        z: 4,
+    };
+    const b = {
+        x: 2,
+        y: 3,
+        j: 0,
+    };
+
+    const p = document.createElement('p');
+    const p2 = document.createElement('p');
+    p.innerText = JSON.stringify(addObjects(a, b));
+    p2.innerText = JSON.stringify(intersectObjects(a, b));
+    document.body.append(p, p2);
+
+    function addObjects() {
+        const res = {};
+        Array.from(arguments).forEach((obj) => {
+            if (typeof obj === 'object') {
+                Object.keys(obj).forEach((key) => {
+                    if (res[key]) {
+                        res[key] += obj[key];
+                    } else {
+                        res[key] = obj[key];
+                    }
+                });
+            }
+        });
+        return res;
+    }
+
+    function intersectObjects() {
+        const res = [];
+        Array.from(arguments).forEach((obj, i) => {
+            if (typeof obj === 'object') {
+                Object.keys(obj).forEach((key) => {
+                    res.push(key);
+                });
+            }
+        });
+        return res.filter((key) => res.reduce((acc, el) => acc + Number(el === key), 0) === arguments.length).filter((el, i) => res.indexOf(el) === i);
+    }
+</script>
+</html>
