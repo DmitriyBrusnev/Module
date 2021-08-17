@@ -1,4 +1,4 @@
-function randn_bm() {
+function randnBm() {
     let u = 0, v = 0;
     while (u === 0) u = Math.random();
     while (v === 0) v = Math.random();
