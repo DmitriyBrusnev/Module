@@ -8,7 +8,7 @@ function randnBm() {
 const obj = {};
 
 for (let i = 0; i < 10; i++) {
-    const number = randn_bm();
+    const number = randnBm();
     obj[number] = obj[number] ? obj[number] + 1 : 1;
 }
 
