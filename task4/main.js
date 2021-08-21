@@ -1,4 +1,4 @@
-function randn_bm() {
+function randnBm() {
     let u = 0, v = 0;
     while (u === 0) u = Math.random();
     while (v === 0) v = Math.random();
@@ -8,7 +8,7 @@ function randn_bm() {
 const obj = {};
 
 for (let i = 0; i < 10; i++) {
-    const number = randn_bm();
+    const number = randnBm();
     obj[number] = obj[number] ? obj[number] + 1 : 1;
 }
 
