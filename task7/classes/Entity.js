@@ -1,6 +1,13 @@
 class Entity {
-    constructor(name) {
+    constructor(name = 'default') {
         this.name = name;
-        console.log('Entity');
+    }
+
+    tell(info) {
+        console.log(`\t${info}`);
+    }
+
+    showName() {
+        console.log(this.name);
     }
 }

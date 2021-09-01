@@ -1,6 +1,10 @@
+/**
+ * Music track
+ */
 class Stuff extends Entity {
-    constructor() {
-        super();
-        console.log('Stuff');
-    }    
+    constructor(name, duration, author = 'untitled') {
+        super(name);
+        this.duration = duration;
+        this.author = author;
+    }
 }

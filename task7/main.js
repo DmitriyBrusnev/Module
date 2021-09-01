@@ -1,16 +1,26 @@
 const entity = new Entity();
 entity.name = 'Some Entity Name';
 
-const stuff = new Stuff();
-stuff.name = 'stuff1';
-const stuff1 = new Stuff();
-stuff1.name = 'stuff2';
-const stuff2 = new Stuff();
-stuff2.name = 'stuff3';
+// user Dima
+const track1 = new Stuff('Yellow Submarine', 3.5, 'The Beatles');
+const track2 = new Stuff('Восьмиклассница', 4.5, 'Виктор Цой');
+const track3 = new Stuff('Jhonny B. Good', 3, 'Chuck Berry');
 
-const box = new Box();
-box.stuff.push(stuff, stuff1, stuff2);
+const box = new Box('Dima\'s tracks', track1, track2);
+box.addStuff('1', '2', track3, '4');
 
-const user = new User(box);
+const userDima = new User('Dimas', box);
 
-console.log(entity, stuff, box, user);
+userDima.showTracks();
+
+// user Andrew
+const track11 = new Stuff('A Day In The Life ', 5, 'The Beatles');
+const track22 = new Stuff('Кукушка', 4, 'Виктор Цой');
+const track33 = new Stuff('Ledy B. Good', 2, 'Chuck Berry');
+
+const andrewBox = new Box('Andrew\'s tracks', track11, track22);
+andrewBox.addStuff('1', track33, '4');
+
+const userAndrew = new User('Andrewha', andrewBox);
+
+userAndrew.showTracks();
