@@ -1,0 +1,214 @@
+main {
+    padding: 15rem 8rem;
+    display: flex;
+    justify-content: space-between;
+    .blogs {
+        max-width: 75rem;
+        margin-right: 13rem;
+        .blogs__item {
+            margin-bottom: 10rem;
+            img {
+                width: 100%;
+            }
+            .blog__stats {
+                margin-top: 3rem;
+                .blog__date {
+                    background: #7BEEC7;
+                    color: #FFFFFF;
+                    padding: 0.5rem 2rem;
+                    font-size: 1.2rem;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-weight: bold;
+                    margin-right: 2rem;
+                }
+                .blog__comments, .blog__likes {
+                    display: flex;
+                    align-items: center;
+                    color: #CCCCCC;
+                    img {
+                        object-fit: contain;
+                    }
+                    span {
+                        margin: 0 0.8rem;
+                    }
+                }
+                display: flex;
+                &>span {
+                    margin-right: 1rem;
+                }
+            }
+            .blog__info {
+                .blog__info__title {
+                    margin-top: 2rem;
+                    font-size: 2rem;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-weight: bold;
+                    color: #60606E;
+                }
+                .blog__info__content {
+                    margin-top: 1rem;
+                    font-size: 1.4rem;
+                    font-family: Arial, Helvetica, sans-serif;
+                    color: #c4bdbd;
+                    line-height: 2.3rem;
+                }
+            }
+            .blog__continue {
+                font-size: 1.4rem;
+                font-family: Arial, Helvetica, sans-serif;
+                color: #60606E;
+                text-transform: uppercase;
+                font-weight: bold;
+                margin-top: 3rem;
+            }
+        }
+    }
+    aside {
+        width: 26rem;
+        .search {
+            display: flex;
+            input {
+                width: 21rem;
+                height: 4rem;
+                background: #ECECEC;
+                border: none;
+                &::placeholder {
+                    font-size: 1.3rem;
+                    color: #A6A6AD;
+                    font-weight: bold;
+                    text-indent: 2rem;
+                }
+            }
+            .search__lupa {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: #ECECEC;
+                width: 5rem;
+                height: 4rem;
+                img {
+                    object-fit: contain;
+                }
+                transition-duration: 0.3s;
+                &:hover {
+                    background-color: #d3cece;
+                    cursor: pointer;
+                }
+            }
+        }
+        .posts {
+            .posts__title {
+                font-size: 1.4rem;
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: bolder;
+                color: #60606E;
+                margin: 5rem 0 3rem 0;
+            }
+            .posts__tabs {
+                display: flex;
+                .tabs__item {
+                    text-align: center;
+                    width: 33.3%;
+                    font-size: 1.0rem;
+                    font-family: sans-serif;
+                    font-weight: bold;
+                    color: #999999;
+                    .tab__label {
+                        width: 100%;
+                        height: 3px;
+                        background: #E6E6E6;
+                        margin: 2rem 0;
+                    }
+                    &.active {
+                        color: #60606E;
+                        .tab__label {
+                            background: #7BEEC7;
+                        }
+                    }
+                }
+            }
+            .post__item {
+                margin: 1rem 0;
+                display: flex;
+                img {
+                    width: 33%;
+                    object-fit: cover;
+                }
+                .post__info {
+                    margin: 2rem;
+                    .post__title {
+                        text-transform: uppercase;
+                        font-size: 1.4rem;
+                        font-family: sans-serif;
+                        font-weight: bold;
+                        color: #6A6A77;
+                    }
+                    .post__date {
+                        margin-top: 2px;
+                        font-family: sans-serif;
+                        font-weight: bold;
+                        color: #CCCCCC;
+                    }
+                }
+            }
+        }
+        .categories, .archives {
+            margin-top: 5rem;
+            .categories__title {
+                text-transform: uppercase;
+                font-size: 1.4rem;
+                font-family: sans-serif;
+                font-weight: bold;
+                color: #60606E;
+                margin-bottom: 1rem;
+            }
+            .categories__item {
+                height: 5rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 1px solid #BFBFBF;
+                font-size: 1.4rem;
+                font-family: sans-serif;
+                color: #727274;
+                div {
+                    margin: 0 2rem;
+                }
+            }
+        }
+        .tags {
+            .tags__title {
+                margin: 5rem 0 3rem 0;
+                text-transform: uppercase;
+                font-size: 1.4rem;
+                font-family: sans-serif;
+                font-weight: bold;
+                color: #60606E;
+            }
+            .tags__items {
+                display: flex;
+                flex-wrap: wrap;
+                .tag__item {
+                    padding: 1rem 2rem;
+                    background: #E5E5E5;
+                    color: #999999;
+                    font-size: 1rem;
+                    font-family: sans-serif;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    margin: 0 5px 5px 0;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 512px) {
+    main {
+        flex-direction: column;
+        padding: 15rem 4rem;
+        aside, .blogs {
+            margin: 0 auto;
+        }
+    }
+}

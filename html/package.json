@@ -1,0 +1,35 @@
+{
+    "name": "woodhouse",
+    "version": "1.0.0",
+    "description": "Wood house",
+    "main": "index.js",
+    "dependencies": {
+        "aos": "^2.3.4",
+        "gulp": "^4.0.2",
+        "gulp-terser": "^2.0.1",
+        "intl-tel-input": "^17.0.3",
+        "jquery": "^3.4.1",
+        "normalize.css": "^8.0.1",
+        "typed.js": "^2.0.11"
+    },
+    "devDependencies": {
+        "browser-sync": "^2.26.7",
+        "del": "^5.1.0",
+        "gulp-autoprefixer": "^7.0.1",
+        "gulp-clean-css": "^4.3.0",
+        "gulp-concat": "^2.6.1",
+        "gulp-flatten": "^0.4.0",
+        "gulp-sass": "^4.1.0",
+        "gulp-uglify": "^3.0.2",
+        "node-sass": "^4.14.1"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "gulp do",
+        "watch": "gulp watch",
+        "build": "gulp build"
+    },
+    "keywords": [],
+    "author": "Dmitriy",
+    "license": "ISC"
+}
