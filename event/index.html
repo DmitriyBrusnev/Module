@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <th data-index="0">Col 1<span>&#8593</span></th>
+            <th data-index="1">Col 2<span>&#8593</span></th>
+            <th data-index="2">Col 3<span>&#8593</span></th>
+            <th data-index="3">Col 4<span>&#8593</span></th>
+        </thead>
+        <tr>
+            <td data-index="0-0" class="edit">D<span class="ok">&#9745</span></td>
+            <td data-index="0-1" class="edit">Dimas<span class="ok">&#9745</span></td>
+            <td data-index="0-2" class="edit">String 3<span class="ok">&#9745</span></td>
+            <td data-index="0-3" class="edit">4<span class="ok">&#9745</span></td>
+        </tr>
+        <tr>
+            <td data-index="1-0" class="edit">C<span class="ok">&#9745</span></td>
+            <td data-index="1-1" class="edit">Vlados<span class="ok">&#9745</span></td>
+            <td data-index="1-2" class="edit">String 1<span class="ok">&#9745</span></td>
+            <td data-index="1-3" class="edit">8<span class="ok">&#9745</span></td>
+        </tr>
+        <tr>
+            <td data-index="2-0" class="edit">A<span class="ok">&#9745</span></td>
+            <td data-index="2-1" class="edit">Andrewha<span class="ok">&#9745</span></td>
+            <td data-index="2-2" class="edit">String 2<span class="ok">&#9745</span></td>
+            <td data-index="2-3" class="edit">6<span class="ok">&#9745</span></td>
+        </tr>
+    </table>
+</body>
+
+<style>
+    table {
+        border-collapse: collapse;
+        border: 1px solid black;
+        margin: 3rem auto;
+        font-family: sans-serif;
+    }
+    
+    td {
+        border: 1px solid black;
+        padding: 3rem;
+        text-align: center;
+        cursor: pointer;
+        position: relative;
+    }
+    
+    td>span.ok.active {
+        display: inline;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    
+    td>span.ok {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 2rem;
+    }
+    
+    td.edit:hover {
+        color: beige;
+    }
+    
+    td.edit:hover::before {
+        content: 'Edit';
+        position: absolute;
+        color: rgb(46, 49, 214);
+    }
+    
+    th {
+        transition-duration: 0.3s;
+    }
+    
+    th:hover {
+        cursor: pointer;
+        background: #f0ecec;
+    }
+    
+    th>span {
+        float: right;
+    }
+</style>
+
+<script src="./main.js"></script>
+
+</html>
