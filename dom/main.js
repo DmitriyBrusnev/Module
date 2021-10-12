@@ -3,7 +3,9 @@ let currentMove = ['x', 'o'][randomInteger(0, 1)];
 const table = document.querySelector('table');
 const tds = getTds();
 
-table.addEventListener('click', (event) => {
+table.addEventListener('click', tableClickHandler);
+
+function tableClickHandler(event) {
     const td = event.target;
     if (td.tagName != 'TD' || ['o', 'x'].includes(td.innerText)) return;
 
@@ -20,7 +22,7 @@ table.addEventListener('click', (event) => {
         p.innerText = `${result} won.`;
         document.body.appendChild(p);
     }
-});
+}
 
 function checkWin(row, col) {
     const goal = tds[row][col].innerText;
