@@ -1,26 +1,36 @@
 const arr = [1, 2, 3, 4];
-const arr2 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
-const arr3 = 
-[
+const arr2 = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+];
+const arr3 = [
     [
-        [1, 2, 3], [4, 5, 6], [7, 8, 9]
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9]
     ],
     [
-        [10, 11, 12], [13, 14, 15], [16, 17, 18]
+        [10, 11, 12],
+        [13, 14, 15],
+        [16, 17, 18]
     ],
     [
-        [19, 20, 21], [22, 23, 24], [25, 26, 27]
+        [19, 20, 21],
+        [22, 23, 24],
+        [25, 26, 27]
     ],
 ];
 
 /**
- * Найти размерность массива
- * @param { any[] } arr - массив
- * @returns { number } Размерность массива
+ * Find array's dimension
+ * @param { any[] } arr - Array
+ * @returns { number } Dimension
  */
 function getDimension(arr) {
     if (Array.isArray(arr)) {
-      return 1 + getDimension(arr[0]);
+        const dimension = 1 + getDimension(arr[0]);
+        return dimension;
     }
     return 0;
 }
@@ -40,8 +50,8 @@ function everyNeighborsSum(arr) {
                 const internalArr = [];
                 for (let j = 0; j < arr[i].length; j++) {
                     internalArr.push(
-                        checkNum(checkNum(arr[i - 1])[j]) + checkNum(checkNum(arr[i + 1])[j])
-                        + checkNum(checkNum(arr[i])[j - 1]) + checkNum(checkNum(arr[i])[j + 1])
+                        checkNum(checkNum(arr[i - 1])[j]) + checkNum(checkNum(arr[i + 1])[j]) +
+                        checkNum(checkNum(arr[i])[j - 1]) + checkNum(checkNum(arr[i])[j + 1])
                     );
                 }
                 newArr.push(internalArr);
@@ -54,9 +64,9 @@ function everyNeighborsSum(arr) {
                     const internalArr2 = [];
                     for (let k = 0; k < arr[i][j].length; k++) {
                         internalArr2.push(
-                            checkNum(checkNum(checkNum(arr[i - 1])[j])[k]) + checkNum(checkNum(checkNum(arr[i + 1])[j])[k])
-                            + checkNum(checkNum(checkNum(arr[i])[j - 1])[k]) + checkNum(checkNum(checkNum(arr[i])[j + 1])[k])
-                            + checkNum(checkNum(checkNum(arr[i])[j])[k - 1]) + checkNum(checkNum(checkNum(arr[i])[j])[k + 1])
+                            checkNum(checkNum(checkNum(arr[i - 1])[j])[k]) + checkNum(checkNum(checkNum(arr[i + 1])[j])[k]) +
+                            checkNum(checkNum(checkNum(arr[i])[j - 1])[k]) + checkNum(checkNum(checkNum(arr[i])[j + 1])[k]) +
+                            checkNum(checkNum(checkNum(arr[i])[j])[k - 1]) + checkNum(checkNum(checkNum(arr[i])[j])[k + 1])
                         );
                     }
                     internalArr.push(internalArr2);
