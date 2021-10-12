@@ -4,7 +4,9 @@ const tds = document.querySelectorAll('td');
 ths.forEach((th) => {
     let sortedUp = false;
 
-    th.addEventListener('click', (e) => {
+    th.addEventListener('click', thClickHandler);
+
+    function thClickHandler(e) {
         const colIndex = +e.target.dataset.index;
 
         const tds = Array.from(document.querySelectorAll('td')).filter((el) => el.dataset.index.split('-')[1] === colIndex.toString());
@@ -24,7 +26,7 @@ ths.forEach((th) => {
         sortedUp = !sortedUp;
 
         e.target.querySelector('span').style.transform = `rotate(${sortedUp ? 180 : 0}deg)`;
-    });
+    }
 });
 
 tds.forEach((td) => {
